@@ -1,0 +1,43 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-top": 6,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["custom/claude"],
+  "modules-right": ["custom/sysinfo", "custom/battery", "clock"],
+
+  "custom/claude": {
+    "exec": "python3 ~/.config/waybar/scripts/claude_usage.py",
+    "return-type": "json",
+    "format": "{}",
+    "interval": 60,
+    "tooltip": false
+  },
+
+  "custom/sysinfo": {
+    "exec": "python3 ~/.config/waybar/scripts/sysinfo.py",
+    "return-type": "json",
+    "format": "{}",
+    "interval": 3,
+    "tooltip": false
+  },
+
+  "custom/battery": {
+    "exec": "python3 ~/.config/waybar/scripts/battery.py",
+    "return-type": "json",
+    "format": "{}",
+    "interval": 30,
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{id}",
+    "on-click": "activate"
+  },
+
+  "clock": {
+    "format": "<span color='#888'>{:%H:%M}</span>"
+  }
+}
