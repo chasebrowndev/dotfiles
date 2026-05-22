@@ -10,7 +10,7 @@ def bar(pct, length=5):
 
 def color(pct):
     t = max(0.0, min(1.0, 1 - pct / 100))
-    r = int(0x66 + (0xff - 0x66) * t)
+    r = int(0x88 + (0xff - 0x88) * t)
     return f"#{r:02x}0000"
 
 
@@ -33,7 +33,7 @@ def find_battery():
 bat = find_battery()
 
 if not bat:
-    print(json.dumps({"text": "<span color='#444'>NO BAT</span>"}))
+    print(json.dumps({"text": "<span color='#666'>NO BAT</span>"}))
     exit()
 
 
@@ -64,11 +64,11 @@ else:
     time_str = ""
 
 indicator = " <span color='#aaa'>↑</span>" if charging else ""
-time_part = f" <span color='#555'>{time_str}</span>" if time_str else ""
+time_part = f" <span color='#888'>{time_str}</span>" if time_str else ""
 
 text = (
-    f"<span color='#888'>BAT</span> "
-    f"<span color='#444'>[</span><span color='{c}'>{bar(pct)}</span><span color='#444'>]</span> "
+    f"<span color='#aaa'>BAT</span> "
+    f"<span color='#666'>[</span><span color='{c}'>{bar(pct)}</span><span color='#666'>]</span> "
     f"<span color='{c}'>{pct}%</span>"
     f"{time_part}{indicator}"
 )

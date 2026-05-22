@@ -10,7 +10,7 @@ def bar(pct, length=5):
 
 def color(pct):
     t = max(0.0, min(1.0, pct / 100))
-    r = int(0x66 + (0xff - 0x66) * t)
+    r = int(0x88 + (0xff - 0x88) * t)
     return f"#{r:02x}0000"
 
 
@@ -41,19 +41,19 @@ def mem_info():
     return round(100 * used / total), used / 1048576
 
 
-sep = "<span color='#333'>  |  </span>"
+sep = "<span color='#555'>  |  </span>"
 
 cpu = cpu_pct()
 mem_pct, mem_used = mem_info()
 cc, mc = color(cpu), color(mem_pct)
 
 text = (
-    f"<span color='#888'>CPU</span> "
-    f"<span color='#444'>[</span><span color='{cc}'>{bar(cpu)}</span><span color='#444'>]</span> "
+    f"<span color='#aaa'>CPU</span> "
+    f"<span color='#666'>[</span><span color='{cc}'>{bar(cpu)}</span><span color='#666'>]</span> "
     f"<span color='{cc}'>{cpu}%</span>"
     f"{sep}"
-    f"<span color='#888'>MEM</span> "
-    f"<span color='#444'>[</span><span color='{mc}'>{bar(mem_pct)}</span><span color='#444'>]</span> "
+    f"<span color='#aaa'>MEM</span> "
+    f"<span color='#666'>[</span><span color='{mc}'>{bar(mem_pct)}</span><span color='#666'>]</span> "
     f"<span color='{mc}'>{mem_used:.1f}G</span>"
 )
 

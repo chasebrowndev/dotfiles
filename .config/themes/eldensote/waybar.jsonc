@@ -1,0 +1,27 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["window"],
+  "modules-right": ["cpu", "memory", "battery", "clock"],
+
+  "tray-position": "right",
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true
+  },
+
+  "cpu": {
+    "format": "CPU: {usage}%"
+  },
+  "memory": {
+    "format": "RAM: {used}G/{total}G"
+  },
+  "battery": {
+    "format": "BAT: {capacity}%"
+  },
+  "clock": {
+    "format": "{:%H:%M}"
+  }
+}

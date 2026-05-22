@@ -1,0 +1,39 @@
+#waybar {
+    background: rgba(0,0,0,0.01);
+    border: none;
+}
+
+/* modules styling */
+.module {
+    background: rgba(0,0,0,0.6);
+    border-radius: 3;           /* square corners */
+    border: 1px solid yellow;    /* white border */
+    padding: 3px;
+    margin: 5px;
+    color: #fcf403;
+    font-weight: 500;
+    min-height: 24px;
+}
+
+.module:hover {
+    background: rgba(50,50,50,0.8);
+}
+
+/* active workspace styling */
+#waybar .hyprland-workspaces .workspace.active {
+    background: rgba(255,255,0,0.8);
+    color: #fc0303;
+    font-weight: 700;
+    border-radius: 3;           /* square */
+    border: 1px solid red;    /* white border */
+    padding: 2px 26px;
+}
+
+/* tray items styling */
+#tray .tray-item {
+    background: rgba(255,255,0,0.6);
+    border-radius: 3;           /* square */
+    border: 1px solid yellow;    /* white border */
+    padding: 2px 4px;
+    margin-left: 4px;
+}

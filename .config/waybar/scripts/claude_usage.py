@@ -129,19 +129,19 @@ def main():
     five_label = f"{five_pct}%" if five.get("resets_at") else "--"
     seven_label = f"{seven_pct}%" if seven.get("resets_at") else "--"
 
-    sep = "<span color='#333'>  |  </span>"
+    sep = "<span color='#555'>  |  </span>"
 
     text = (
-        f"<span color='#555'> CLAUDE</span>{sep}"
-        f"<span color='#888'>SESSION</span>  "
-        f"<span color='#444'>[</span><span color='{five_c}'>{bar(five_pct)}</span><span color='#444'>]</span>  "
+        f"<span color='#888'> CLAUDE</span>{sep}"
+        f"<span color='#aaa'>SESSION</span>  "
+        f"<span color='#666'>[</span><span color='{five_c}'>{bar(five_pct)}</span><span color='#666'>]</span>  "
         f"<span color='{five_c}'>{five_label}</span>  "
-        f"<span color='#555'>RESETS</span> <span color='#aaa'>{five_reset}</span>"
+        f"<span color='#888'>RESETS</span> <span color='#aaa'>{five_reset}</span>"
         f"{sep}"
-        f"<span color='#888'>WEEKLY</span>  "
-        f"<span color='#444'>[</span><span color='{seven_c}'>{bar(seven_pct)}</span><span color='#444'>]</span>  "
+        f"<span color='#aaa'>WEEKLY</span>  "
+        f"<span color='#666'>[</span><span color='{seven_c}'>{bar(seven_pct)}</span><span color='#666'>]</span>  "
         f"<span color='{seven_c}'>{seven_label}</span>  "
-        f"<span color='#555'>RESETS</span> <span color='#aaa'>{seven_reset}</span>"
+        f"<span color='#888'>RESETS</span> <span color='#aaa'>{seven_reset}</span>"
     )
 
     extra = data.get("extra_usage", {})
@@ -152,10 +152,10 @@ def main():
         extra_c = color(extra_pct)
         text += (
             f"{sep}"
-            f"<span color='#888'>EXTRA</span>  "
-            f"<span color='#444'>[</span><span color='{extra_c}'>{bar(extra_pct)}</span><span color='#444'>]</span>  "
+            f"<span color='#aaa'>EXTRA</span>  "
+            f"<span color='#666'>[</span><span color='{extra_c}'>{bar(extra_pct)}</span><span color='#666'>]</span>  "
             f"<span color='{extra_c}'>{extra_pct}%</span>  "
-            f"<span color='#555'>${used:.2f}</span><span color='#333'>/</span><span color='#555'>${limit:.2f}</span>"
+            f"<span color='#888'>${used:.2f}</span><span color='#555'>/</span><span color='#888'>${limit:.2f}</span>"
         )
 
     print(json.dumps({"text": text}))

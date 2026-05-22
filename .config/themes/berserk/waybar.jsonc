@@ -1,0 +1,69 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-top": 6,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["custom/claude"],
+  "modules-right": ["custom/sysinfo", "custom/battery", "custom/network", "custom/audio", "custom/power", "clock"],
+
+  "custom/claude": {
+    "exec": "python3 ~/.config/waybar/scripts/claude_usage.py",
+    "return-type": "json",
+    "format": "{}",
+    "interval": 60,
+    "tooltip": false
+  },
+
+  "custom/sysinfo": {
+    "exec": "python3 ~/.config/waybar/scripts/sysinfo.py",
+    "return-type": "json",
+    "format": "{}",
+    "interval": 3,
+    "tooltip": false,
+    "on-click": "python3 ~/.config/waybar/scripts/popup_sysinfo.py"
+  },
+
+  "custom/battery": {
+    "exec": "python3 ~/.config/waybar/scripts/battery.py",
+    "return-type": "json",
+    "format": "{}",
+    "interval": 30,
+    "tooltip": false
+  },
+
+  "custom/network": {
+    "exec": "python3 ~/.config/waybar/scripts/network.py",
+    "return-type": "json",
+    "format": "{}",
+    "interval": 5,
+    "tooltip": false,
+    "on-click": "python3 ~/.config/waybar/scripts/popup_network.py"
+  },
+
+  "custom/audio": {
+    "exec": "python3 ~/.config/waybar/scripts/audio.py",
+    "return-type": "json",
+    "format": "{}",
+    "interval": 2,
+    "tooltip": false,
+    "on-click": "python3 ~/.config/waybar/scripts/popup_audio.py"
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "python3 ~/.config/waybar/scripts/popup_power.py"
+  },
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{id}",
+    "on-click": "activate"
+  },
+
+  "clock": {
+    "format": "<span color='#aaa'>{:%H:%M}</span>",
+    "on-click": "python3 ~/.config/waybar/scripts/popup_clock.py"
+  }
+}
